@@ -38,9 +38,9 @@ export const useProgress = () => {
 
   const updateChapterStates = (currentProgress: UserProgress) => {
     setChapters(prevChapters => 
-      prevChapters.map((chapter, index) => ({
+      prevChapters.map((chapter) => ({
         ...chapter,
-        isUnlocked: index === 0 || currentProgress.completedChapters.includes(prevChapters[index - 1]?.id),
+        isUnlocked: true, // All chapters unlocked for demo purposes
         isCompleted: currentProgress.completedChapters.includes(chapter.id),
         quizScore: currentProgress.quizScores[chapter.id],
         timeSpent: currentProgress.timeSpent[chapter.id] || 0,
