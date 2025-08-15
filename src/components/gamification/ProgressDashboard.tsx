@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trophy, Clock, Target, Star, TrendingUp } from 'lucide-react';
-import { UserProgress, Achievement } from '../../types';
+import type { UserProgress } from '../../types';
 
 interface ProgressDashboardProps {
   progress: UserProgress;

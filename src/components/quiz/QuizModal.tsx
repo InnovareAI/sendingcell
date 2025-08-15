@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, CheckCircle, XCircle, Trophy, RotateCcw } from 'lucide-react';
-import { Quiz, QuizQuestion } from '../../types';
+import type { Quiz } from '../../types';
 
 interface QuizModalProps {
   quiz: Quiz;

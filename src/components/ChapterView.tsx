@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Play, BookOpen, Trophy, ArrowRight, BarChart3 } from 'lucide-react';
-import { Chapter, Quiz } from '../types';
+import type { Chapter } from '../types';
 import { chapterContent } from '../data/chapters';
 import { quizzes } from '../data/chapters';
 import ContentBlock from './content/ContentBlock';
@@ -29,7 +29,7 @@ const ChapterView: React.FC<ChapterViewProps> = ({
   const [showDashboard, setShowDashboard] = useState(false);
   const [quizCompleted, setQuizCompleted] = useState(false);
 
-  const { start, pause, getFormattedTime, getMinutes } = useTimer(
+  const { start, pause, getFormattedTime } = useTimer(
     (minutes) => onTimeUpdate(chapter.id, minutes)
   );
 
@@ -45,7 +45,6 @@ const ChapterView: React.FC<ChapterViewProps> = ({
 
   // Check if all content is completed
   const allContentCompleted = completedBlocks.size === contentBlocks.length && contentBlocks.length > 0;
-  const canTakeQuiz = allContentCompleted && quiz && !quizCompleted;
   const canCompleteChapter = allContentCompleted && (!quiz || quizCompleted);
 
   const handleBlockComplete = (blockId: string) => {
@@ -57,7 +56,7 @@ const ChapterView: React.FC<ChapterViewProps> = ({
     }
   };
 
-  const handleQuizComplete = (score: number, timeSpent: number) => {
+  const handleQuizComplete = (score: number) => {
     setQuizCompleted(true);
     setShowQuiz(false);
     onChapterComplete(chapter.id, score);

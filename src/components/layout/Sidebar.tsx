@@ -13,7 +13,7 @@ import {
   Lock,
   Clock
 } from 'lucide-react';
-import { Chapter } from '../../types';
+import type { Chapter } from '../../types';
 import { clsx } from 'clsx';
 
 interface SidebarProps {

@@ -1,4 +1,4 @@
-import { Chapter, Quiz, QuizQuestion, ChapterContent, ContentBlock } from '../types';
+import type { Chapter, Quiz, ContentBlock } from '../types';
 
 export const chapters: Chapter[] = [
   {

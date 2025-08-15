@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clock, Trophy, Star, RotateCcw } from 'lucide-react';
-import { Chapter, Achievement } from '../../types';
+import type { Chapter, Achievement } from '../../types';
 
 interface HeaderProps {
   currentChapter: Chapter;

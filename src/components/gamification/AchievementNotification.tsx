@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { X, Trophy } from 'lucide-react';
-import { Achievement } from '../../types';
+import type { Achievement } from '../../types';
 
 interface AchievementNotificationProps {
   achievement: Achievement | null;

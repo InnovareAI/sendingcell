@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { UserProgress, Chapter, Achievement } from '../types';
+import type { UserProgress, Chapter, Achievement } from '../types';
 import { chapters as initialChapters } from '../data/chapters';
 import { achievements as allAchievements } from '../data/achievements';
 

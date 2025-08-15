@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useProgress } from './hooks/useProgress';
 import { useTimer } from './hooks/useTimer';
 import Sidebar from './components/layout/Sidebar';
 import Header from './components/layout/Header';
 import ChapterView from './components/ChapterView';
 import AchievementNotification from './components/gamification/AchievementNotification';
-import { Achievement } from './types';
+import type { Achievement } from './types';
 
 function App() {
   const {

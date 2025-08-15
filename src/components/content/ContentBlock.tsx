@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentBlock as ContentBlockType } from '../../types';
+import type { ContentBlock as ContentBlockType } from '../../types';
 import { Play, BarChart3, AlertTriangle, Users, FileText, Zap } from 'lucide-react';
 
 interface ContentBlockProps {
