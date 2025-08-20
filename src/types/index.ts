@@ -49,7 +49,7 @@ export interface UserProgress {
 
 export interface ContentBlock {
   id: string;
-  type: 'slide' | 'video' | 'testimonial' | 'chart' | 'safety' | 'interactive';
+  type: 'slide' | 'video' | 'testimonial' | 'chart' | 'safety' | 'interactive' | 'case-study' | 'brain-3d' | 'symptom-matcher' | 'risk-calculator' | 'timeline' | 'comparison';
   title: string;
   content: string;
   metadata?: Record<string, any>;
@@ -60,7 +60,7 @@ export interface ChapterContent {
   blocks: ContentBlock[];
 }
 
-export type ContentType = 'slide' | 'video' | 'testimonial' | 'chart' | 'safety' | 'interactive';
+export type ContentType = 'slide' | 'video' | 'testimonial' | 'chart' | 'safety' | 'interactive' | 'case-study' | 'brain-3d' | 'symptom-matcher' | 'risk-calculator' | 'timeline' | 'comparison';
 
 export interface GameState {
   level: number;
