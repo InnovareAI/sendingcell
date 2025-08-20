@@ -18,10 +18,42 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ block, onComplete }) => {
                 <FileText size={20} className="text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold text-healthcare-800">{block.title}</h3>
+              {block.metadata?.hasImages && (
+                <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">
+                  With Images
+                </span>
+              )}
             </div>
             <div className="prose prose-healthcare max-w-none">
               <p className="text-healthcare-700 leading-relaxed">{block.content}</p>
             </div>
+            
+            {/* Medical Images Section */}
+            {block.metadata?.hasImages && block.metadata?.images && (
+              <div className="mt-6">
+                <h4 className="font-semibold text-healthcare-800 mb-4">Medical Illustrations:</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {block.metadata.images.map((image: any, idx: number) => (
+                    <div key={idx} className="bg-healthcare-50 p-4 rounded-lg border">
+                      <div className="bg-white rounded border-2 border-dashed border-healthcare-300 p-8 text-center mb-3">
+                        <FileText size={48} className="text-healthcare-400 mx-auto mb-2" />
+                        <p className="text-sm text-healthcare-600 font-medium">{image.alt}</p>
+                        <p className="text-xs text-healthcare-500 mt-1">Image placeholder</p>
+                        <p className="text-xs text-healthcare-400 mt-2">{image.url}</p>
+                      </div>
+                      <p className="text-xs text-healthcare-600 text-center">{image.caption}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                  <p className="text-sm text-blue-700">
+                    📸 <strong>For production:</strong> Replace placeholders with medical images from CDC, NLM, or Creative Commons sources. 
+                    See <code>/public/images/medical/README.md</code> for sourcing guidelines.
+                  </p>
+                </div>
+              </div>
+            )}
+            
             <div className="mt-6 pt-4 border-t border-healthcare-200">
               <button
                 onClick={onComplete}

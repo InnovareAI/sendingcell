@@ -273,6 +273,21 @@ export const chapterContent: Record<string, ContentBlock[]> = {
       type: 'slide',
       title: 'Huntington\'s Disease: Genetic and Clinical Overview',
       content: 'Huntington\'s Disease (HD) is an autosomal dominant neurodegenerative disorder caused by CAG repeat expansion in the huntingtin gene (HTT) on chromosome 4. Clinical triad includes: progressive motor dysfunction (chorea, dystonia, bradykinesia), cognitive decline (executive dysfunction, working memory deficits), and psychiatric symptoms (depression, anxiety, apathy, irritability).',
+      metadata: {
+        hasImages: true,
+        images: [
+          {
+            url: '/images/medical/brain-anatomy/striatum-comparison.png',
+            alt: 'Comparison of normal brain vs Huntington\'s disease brain showing striatum degeneration',
+            caption: 'Brain imaging showing characteristic striatal atrophy in HD'
+          },
+          {
+            url: '/images/medical/genetics/htt-gene-structure.png', 
+            alt: 'HTT gene structure showing CAG repeat expansion',
+            caption: 'HTT gene on chromosome 4 with CAG repeat expansion (>36 repeats = HD)'
+          }
+        ]
+      }
     },
     {
       id: 'brain-3d-hd',
