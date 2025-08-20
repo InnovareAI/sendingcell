@@ -108,59 +108,72 @@ export const quizzes: Quiz[] = [
   {
     id: 'orientation-quiz',
     chapterId: 'orientation',
-    totalPoints: 100,
+    totalPoints: 125,
     passingScore: 70,
     questions: [
       {
         id: 'q1',
-        question: 'What are the two main conditions covered in this AUSTEDO XR education program?',
+        question: 'What percentage of patients on long-term dopamine blocking therapy develop Tardive Dyskinesia?',
         options: [
-          'Huntington\'s Disease and Parkinson\'s Disease',
-          'Huntington\'s Disease and Tardive Dyskinesia',
-          'Tardive Dyskinesia and Essential Tremor',
-          'Parkinson\'s Disease and Essential Tremor'
+          '10-15%',
+          '20-30%',
+          '40-50%',
+          '60-70%'
         ],
         correctAnswer: 1,
-        explanation: 'AUSTEDO XR is indicated for Huntington\'s Disease and Tardive Dyskinesia.',
+        explanation: 'Research shows that TD develops in about 20-30% of people on long-term dopamine blocking therapy.',
         points: 25
       },
       {
         id: 'q2',
-        question: 'Which statement best describes the impact of movement disorders on patients?',
+        question: 'Which brain region is primarily affected in Huntington\'s Disease?',
         options: [
-          'They only affect physical movement',
-          'They impact multiple aspects of daily life including social and emotional well-being',
-          'They are easily manageable with lifestyle changes',
-          'They only occur in elderly patients'
+          'Cerebellum',
+          'Frontal cortex',
+          'Striatum',
+          'Hippocampus'
         ],
-        correctAnswer: 1,
-        explanation: 'Movement disorders have profound impacts on patients\' physical, social, and emotional well-being.',
+        correctAnswer: 2,
+        explanation: 'HD causes degeneration in the striatum, part of the brain\'s motor control network.',
         points: 25
       },
       {
         id: 'q3',
-        question: 'What is the primary goal of this educational program?',
+        question: 'What type of inheritance pattern does Huntington\'s Disease follow?',
         options: [
-          'To replace medical consultation',
-          'To provide comprehensive education about AUSTEDO XR and movement disorders',
-          'To diagnose movement disorders',
-          'To prescribe treatment protocols'
+          'Autosomal recessive',
+          'X-linked',
+          'Autosomal dominant',
+          'Mitochondrial'
         ],
-        correctAnswer: 1,
-        explanation: 'This program aims to educate healthcare providers about AUSTEDO XR and movement disorders.',
+        correctAnswer: 2,
+        explanation: 'HD is inherited in an autosomal dominant pattern, meaning only one copy of the altered gene is needed.',
         points: 25
       },
       {
         id: 'q4',
-        question: 'Who is the target audience for AUSTEDO XR education?',
+        question: 'Which assessment tool is commonly used for evaluating Tardive Dyskinesia?',
         options: [
-          'Only neurologists',
-          'Only patients',
-          'Healthcare providers across multiple specialties',
-          'Only pharmacists'
+          'MMSE',
+          'AIMS',
+          'MoCA',
+          'UPDRS'
+        ],
+        correctAnswer: 1,
+        explanation: 'The Abnormal Involuntary Movement Scale (AIMS) helps track TD symptom severity and changes.',
+        points: 25
+      },
+      {
+        id: 'q5',
+        question: 'The hallmark movement symptom of Huntington\'s Disease is:',
+        options: [
+          'Tremor',
+          'Rigidity',
+          'Chorea',
+          'Dystonia'
         ],
         correctAnswer: 2,
-        explanation: 'AUSTEDO XR education targets healthcare providers across various specialties who may encounter these conditions.',
+        explanation: 'Chorea - rapid, unpredictable, involuntary movements - is the hallmark motor symptom of HD.',
         points: 25
       }
     ]
@@ -171,29 +184,50 @@ export const quizzes: Quiz[] = [
 export const chapterContent: Record<string, ContentBlock[]> = {
   'orientation': [
     {
-      id: 'slide-1',
-      type: 'slide',
-      title: 'Welcome to AUSTEDO XR Education',
-      content: 'This comprehensive program will provide you with essential knowledge about movement disorders and AUSTEDO XR treatment options. You will learn about Huntington\'s Disease and Tardive Dyskinesia, their impact on patients, and how AUSTEDO XR can help improve patient outcomes.',
-    },
-    {
-      id: 'video-1',
+      id: 'video-welcome',
       type: 'video',
-      title: 'Introduction to Movement Disorders',
-      content: 'Educational video covering the basics of movement disorders',
-      metadata: { duration: '5:30' }
+      title: 'Welcome to Movement Disorders Education - Dr. Mara',
+      content: 'Welcome to this educational module on movement disorders. My name is Mara. I will be your guide for this educational series. This program provides general evidence-based information about movement disorders. We will cover their causes, underlying mechanisms, and currently available treatment approaches. Each section ends with a brief knowledge check to reinforce your learning.',
+      metadata: { 
+        duration: '0:35',
+        videoUrl: '/videos/dr-mara-welcome.mp4',
+        transcript: 'Welcome to this educational module on movement disorders. My name is Mara. I will be your guide for this educational series. This program provides general evidence-based information about movement disorders. We will cover their causes, underlying mechanisms, and currently available treatment approaches. Each section ends with a brief knowledge check to reinforce your learning. Important disclaimer: This module is for educational purposes only. It does not provide medical advice, diagnosis or treatment recommendations. Patients should always consult their healthcare provider for guidance specific to their individual situation.'
+      }
     },
     {
-      id: 'chart-1',
+      id: 'slide-disclaimer',
+      type: 'slide',
+      title: 'Important Educational Disclaimer',
+      content: 'This module is for educational purposes only. It does not provide medical advice, diagnosis or treatment recommendations. Patients should always consult their healthcare provider for guidance specific to their individual situation.',
+    },
+    {
+      id: 'video-chapter1',
+      type: 'video',
+      title: 'Chapter 1: Tardive Dyskinesia & Huntington\'s Disease Overview',
+      content: 'Welcome to chapter one of our series. In this chapter, we\'ll be exploring two important neurological conditions, tardive dyskinesia and Huntington\'s disease. If you\'re already familiar with these conditions, feel free to skip ahead. We\'ve designed these modules so that people at all levels of knowledge can benefit.',
+      metadata: { 
+        duration: '3:05',
+        videoUrl: '/videos/chapter1-td-hd-overview.mp4',
+        transcript: 'Welcome to chapter one of our series. In this chapter, we\'ll be exploring two important neurological conditions, tardive dyskinesia and Huntington\'s disease. If you\'re already familiar with these conditions, feel free to skip ahead. We\'ve designed these modules so that people at all levels of knowledge can benefit. For everyone else, let\'s dive in. Tardive dyskinesia is a movement disorder. It causes persistent, involuntary repetitive movements, often involving the face, tongue, lips, trunk, or limbs. Common examples include grimacing, tongue movement, lip smacking, rapid blinking, or jerking motions of the arms and legs. Research shows that TD develops in about 20 to 30% of people who are on long-term dopamine blocking therapy, though the exact number can vary depending on treatment duration, dosage, and personal risk factors. Some factors can make TD more likely. Older adults are more at risk. Women, especially postmenopausal, are more susceptible. The longer someone has been on certain dopamine blocking medications, the higher the risk. Preexisting brain injuries or certain mood disorders may increase vulnerability. When diagnosing TD, specialists use criteria set by the Movement Disorder Society, which include involuntary movements lasting for weeks or longer, symptoms not caused by another condition, a history of exposure to dopamine blocking drugs. One common tool for assessing symptoms is the abnormal involuntary movement scale, AIMS, which helps track how severe the movements are and how they change over time. It\'s important to note that TD is different from other movement disorders such as dystonia, Parkinsonism, or chorea caused by other conditions because each has different management strategies. Now, let\'s move on to the next condition. Huntington\'s disease is a rare inherited neurodegenerative disorder. It causes a combination of movement problems, cognitive decline, and psychiatric changes over time. The hallmark movement symptom is chorea, rapid, unpredictable, involuntary movements that can affect the face, limbs and trunk. HD affects about 3 or 7 people per 100,000 of European ancestry and is less common in other populations. It\'s caused by a mutation in the HTT gene on chromosome 4. This mutation is inherited in an autosomal dominant pattern, meaning a person only needs one copy of the altered gene to develop the disease. The mutation leads to production of an abnormal protein, which damages nerve cells. Most people start noticing symptoms between ages 30 and 50. The condition progresses over 10 to 25 years, gradually affecting movement, thinking, and independence. From a biological perspective, HD causes degeneration in the striatum, part of the brain\'s motor control network, particularly in the indirect pathway of the basal ganglia. This disruption leads to the hallmark motor symptoms along with other changes. Diagnosis usually involves recognizing motor symptoms like chorea or impaired coordination, identifying cognitive and emotional changes, confirming the mutation through genetic testing.'
+      }
+    },
+    {
+      id: 'interactive-symptom-matcher',
+      type: 'interactive',
+      title: 'Symptom Recognition Exercise',
+      content: 'Practice identifying and categorizing symptoms of Tardive Dyskinesia and Huntington\'s Disease. Drag symptoms to the correct condition and body region.',
+    },
+    {
+      id: 'chart-prevalence',
       type: 'chart',
-      title: 'Movement Disorder Prevalence',
-      content: 'Interactive chart showing that Huntington\'s Disease affects 3-7 per 100,000 people globally, while Tardive Dyskinesia affects approximately 20% of patients on long-term antipsychotic therapy.',
+      title: 'Movement Disorder Prevalence & Risk Factors',
+      content: 'Interactive chart showing TD affects 20-30% of patients on long-term dopamine blocking therapy, while HD affects 3-7 per 100,000 people of European ancestry. Explore risk factors for each condition.',
     },
     {
-      id: 'safety-1',
-      type: 'safety',
-      title: 'Important Safety Information',
-      content: 'AUSTEDO XR may cause serious side effects including depression and suicidality. Monitor patients for changes in mood, cognition, or behavior. Please review full prescribing information before prescribing.',
+      id: 'interactive-assessment',
+      type: 'interactive',
+      title: 'AIMS Scale Practice',
+      content: 'Practice using the Abnormal Involuntary Movement Scale (AIMS) with video examples and scoring scenarios.',
     }
   ],
   'disease-biology': [

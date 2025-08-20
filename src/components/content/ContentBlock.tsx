@@ -47,17 +47,50 @@ const ContentBlock: React.FC<ContentBlockProps> = ({ block, onComplete }) => {
                 </span>
               )}
             </div>
-            <div className="bg-healthcare-100 rounded-lg aspect-video flex items-center justify-center mb-4">
-              <div className="text-center">
-                <Play size={48} className="text-healthcare-400 mx-auto mb-2" />
-                <p className="text-healthcare-600">Video Placeholder</p>
-                <p className="text-sm text-healthcare-500">{block.content}</p>
-              </div>
+            
+            {/* Video Player or Placeholder */}
+            <div className="bg-healthcare-100 rounded-lg aspect-video flex items-center justify-center mb-4 relative">
+              {block.metadata?.videoUrl ? (
+                <video 
+                  controls 
+                  className="w-full h-full rounded-lg"
+                  poster="/images/video-poster.jpg"
+                >
+                  <source src={block.metadata.videoUrl} type="video/mp4" />
+                  <div className="text-center p-8">
+                    <Play size={48} className="text-healthcare-400 mx-auto mb-2" />
+                    <p className="text-healthcare-600">Video Player Not Supported</p>
+                    <p className="text-sm text-healthcare-500">Please enable JavaScript or use a modern browser</p>
+                  </div>
+                </video>
+              ) : (
+                <div className="text-center">
+                  <Play size={48} className="text-healthcare-400 mx-auto mb-2" />
+                  <p className="text-healthcare-600">Video Placeholder</p>
+                  <p className="text-sm text-healthcare-500">{block.content}</p>
+                  <p className="text-xs text-healthcare-400 mt-2">Upload your Synthesia video to /public/videos/</p>
+                </div>
+              )}
             </div>
+            
+            {/* Video Content Summary */}
+            <div className="bg-healthcare-50 p-4 rounded-lg mb-4">
+              <h4 className="font-medium text-healthcare-800 mb-2">Video Summary:</h4>
+              <p className="text-sm text-healthcare-700">{block.content}</p>
+            </div>
+            
             <div className="flex justify-between items-center">
-              <button className="btn-secondary">
-                View Transcript
-              </button>
+              {block.metadata?.transcript && (
+                <button 
+                  className="btn-secondary"
+                  onClick={() => {
+                    // Show transcript in alert for demo purposes
+                    alert(`Video Transcript:\n\n${block.metadata?.transcript || 'No transcript available'}`);
+                  }}
+                >
+                  View Transcript
+                </button>
+              )}
               <button
                 onClick={onComplete}
                 className="btn-primary"

@@ -46,3 +46,17 @@
   for = "*.css"
   [headers.values]
     cache-control = "max-age=31536000"
+
+[[headers]]
+  for = "/videos/*"
+  [headers.values]
+    cache-control = "max-age=31536000"
+    Accept-Ranges = "bytes"
+    Content-Type = "video/mp4"
+
+[[headers]]
+  for = "*.mp4"
+  [headers.values]
+    cache-control = "max-age=31536000"
+    Accept-Ranges = "bytes"
+    Content-Type = "video/mp4"
